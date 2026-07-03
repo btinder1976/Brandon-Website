@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daddy's Website | Project Builder HQ</title>
+  <meta name="description" content="Daddy's Website is Brandon's project builder headquarters for websites, apps, books, AI tools, 3D prints, and business systems." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Daddy's Website home">
+        <span class="brand-mark">DW</span>
+        <span>Daddy's Website</span>
+      </a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#build-desk">Build Desk</a>
+        <a href="#tracker">Tracker</a>
+        <a href="#prompts">Prompts</a>
+      </div>
+    </nav>
+
+    <section id="top" class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Project Builder HQ</p>
+        <h1>A command center for building websites, apps, books, AI tools, and business ideas.</h1>
+        <p class="hero-text">This is the place to capture ideas, choose the next build, organize active work, and keep moving projects from rough thought to launched result.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#tracker">Start a project</a>
+          <a class="button secondary" href="#build-desk">See the build system</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Current build priority">
+        <p class="panel-label">Current Rule</p>
+        <h2>Build the simplest useful version first.</h2>
+        <p>Decide fast, create the first working version, then improve it with real feedback.</p>
+      </aside>
+    </section>
+  </header>
+
+  <main>
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">Project Areas</p>
+        <h2>Everything has a lane.</h2>
+        <p>Use these buckets to keep ideas organized and turn scattered thoughts into something buildable.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-icon">🌐</span>
+          <h3>Websites</h3>
+          <p>Landing pages, family sites, service businesses, portfolios, and client-ready pages.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon">📱</span>
+          <h3>Apps</h3>
+          <p>Small tools, dashboards, trackers, scheduling systems, and local-first utilities.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon">🤖</span>
+          <h3>AI Tools</h3>
+          <p>Prompts, agents, automations, local AI workflows, and business helper systems.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon">📚</span>
+          <h3>Books</h3>
+          <p>Story worlds, KDP projects, study guides, coloring books, and family writing projects.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon">🧰</span>
+          <h3>Business Systems</h3>
+          <p>Cleaning, laundry, lead generation, customer tracking, quotes, invoices, and operations.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon">🖨️</span>
+          <h3>3D Printing</h3>
+          <p>Printable product ideas, adapters, themed garden discs, STL prompts, and prototypes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" id="build-desk">
+      <div>
+        <p class="eyebrow">Build Desk</p>
+        <h2>The decision system.</h2>
+        <p>Every project should move through the same simple path so it does not stay stuck as an idea.</p>
+      </div>
+      <ol class="steps">
+        <li><strong>Capture it.</strong> Write the idea in one plain sentence.</li>
+        <li><strong>Pick the outcome.</strong> Decide if it should make money, save time, teach, or create memories.</li>
+        <li><strong>Build version one.</strong> Create the smallest useful version.</li>
+        <li><strong>Test it.</strong> Open it, use it, break it, and improve it.</li>
+        <li><strong>Launch or archive.</strong> Ship the useful ones. Park the rest.</li>
+      </ol>
+    </section>
+
+    <section class="section tracker-section" id="tracker">
+      <div class="section-heading">
+        <p class="eyebrow">Project Tracker</p>
+        <h2>Save the next thing to build.</h2>
+        <p>This starter tracker saves projects in this browser. It is perfect for version one. A database can be added later.</p>
+      </div>
+
+      <form class="project-form" id="projectForm">
+        <label>
+          Project name
+          <input id="projectName" name="projectName" type="text" placeholder="Example: Pristine Clean quote app" required />
+        </label>
+        <label>
+          Project type
+          <select id="projectType" name="projectType">
+            <option>Website</option>
+            <option>App</option>
+            <option>AI Tool</option>
+            <option>Book</option>
+            <option>Business System</option>
+            <option>3D Print</option>
+            <option>Family Project</option>
+          </select>
+        </label>
+        <label>
+          Next action
+          <input id="projectAction" name="projectAction" type="text" placeholder="Example: Create homepage wireframe" required />
+        </label>
+        <button class="button primary" type="submit">Save project</button>
+      </form>
+
+      <div class="saved-projects" aria-live="polite">
+        <div class="saved-header">
+          <h3>Saved projects</h3>
+          <button class="text-button" id="clearProjects" type="button">Clear all</button>
+        </div>
+        <div id="projectList" class="project-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="prompts">
+      <div class="section-heading">
+        <p class="eyebrow">Copyable Prompts</p>
+        <h2>Hand clear instructions to any builder.</h2>
+      </div>
+      <div class="prompt-grid">
+        <article class="prompt-card">
+          <h3>Website builder prompt</h3>
+          <p>Build the simplest useful version of this website first. Make it mobile-friendly, easy to edit, and deployment-ready. Improve clarity before adding complexity.</p>
+        </article>
+        <article class="prompt-card">
+          <h3>App builder prompt</h3>
+          <p>Create a working MVP. Start with the core workflow, clear empty states, and local storage if a database is not necessary yet.</p>
+        </article>
+        <article class="prompt-card">
+          <h3>Project cleanup prompt</h3>
+          <p>Inspect the project, identify what is broken or confusing, then make the smallest safe changes that improve usability, design, and deployment readiness.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Daddy's Website · Build, test, launch, repeat.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
