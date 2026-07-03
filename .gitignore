@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Dependency folders for future framework upgrades
+node_modules/
+
+# Build output for future framework upgrades
+dist/
+build/
+
+# Environment files
+.env
+.env.local
