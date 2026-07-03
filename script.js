@@ -18,10 +18,14 @@ function saveProjects(projects) {
 }
 
 function renderProjects() {
+  if (!list) {
+    return;
+  }
+
   const projects = getProjects();
 
   if (!projects.length) {
-    list.innerHTML = '<div class="empty-state">No projects saved yet. Add the next thing Daddy should build.</div>';
+    list.innerHTML = '<div class="empty-state">No missions saved yet. Add the next thing to build.</div>';
     return;
   }
 
@@ -47,44 +51,48 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (form) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const formData = new FormData(form);
-  const project = {
-    name: formData.get("projectName").trim(),
-    type: formData.get("projectType"),
-    action: formData.get("projectAction").trim(),
-    date: new Date().toLocaleDateString(undefined, {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    }),
-  };
+    const formData = new FormData(form);
+    const project = {
+      name: formData.get("projectName").trim(),
+      type: formData.get("projectType"),
+      action: formData.get("projectAction").trim(),
+      date: new Date().toLocaleDateString(undefined, {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      }),
+    };
 
-  if (!project.name || !project.action) {
-    return;
-  }
+    if (!project.name || !project.action) {
+      return;
+    }
 
-  const projects = [project, ...getProjects()];
-  saveProjects(projects);
-  form.reset();
-  renderProjects();
-});
-
-clearButton.addEventListener("click", () => {
-  const projects = getProjects();
-
-  if (!projects.length) {
-    return;
-  }
-
-  const confirmed = window.confirm("Clear all saved projects from this browser?");
-
-  if (confirmed) {
-    saveProjects([]);
+    const projects = [project, ...getProjects()];
+    saveProjects(projects);
+    form.reset();
     renderProjects();
-  }
-});
+  });
+}
+
+if (clearButton) {
+  clearButton.addEventListener("click", () => {
+    const projects = getProjects();
+
+    if (!projects.length) {
+      return;
+    }
+
+    const confirmed = window.confirm("Clear all saved missions from this browser?");
+
+    if (confirmed) {
+      saveProjects([]);
+      renderProjects();
+    }
+  });
+}
 
 renderProjects();
