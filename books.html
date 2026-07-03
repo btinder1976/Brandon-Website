@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books | Daddy's Website</title>
+  <meta name="description" content="Explore Brandon's books, story worlds, study guides, and future Amazon links." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="sub-hero">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Daddy's Website home">
+        <span class="brand-mark">DW</span>
+        <span>Daddy's Website</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Missions</a>
+        <a href="books.html">Books</a>
+        <a href="index.html#ai-engineer">AI Engineer</a>
+      </div>
+    </nav>
+
+    <section class="section sub-hero-grid">
+      <div>
+        <p class="eyebrow">Book Hangar</p>
+        <h1>Books, story worlds, and reader missions.</h1>
+        <p class="hero-text">This page is ready for Brandon's books. Add each title, description, cover image, and Amazon link later. Visitors can use the helper below to find the right book to start with.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#book-list">View book slots</a>
+          <a class="button secondary" href="#book-chat">Ask about the books</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <p class="panel-label">Sales Goal</p>
+        <h2>Help readers choose quickly.</h2>
+        <p>Each book card should make the book clear, explain who it is for, and send readers directly to Amazon.</p>
+      </aside>
+    </section>
+  </header>
+
+  <main>
+    <section class="section" id="book-list">
+      <div class="section-heading">
+        <p class="eyebrow">Bookshelf</p>
+        <h2>Add the real books here later.</h2>
+        <p>These are clean placeholder cards. Replace the titles, descriptions, cover areas, and Amazon links as each book is ready.</p>
+      </div>
+
+      <div class="book-grid">
+        <article class="book-card">
+          <div class="book-cover placeholder-cover">Cover Coming Soon</div>
+          <div class="book-info">
+            <p class="book-type">Adventure / Historical Fiction</p>
+            <h3>The Long Road West</h3>
+            <p>A family-friendly Gold Rush adventure placeholder. Add the final subtitle, description, and Amazon link when ready.</p>
+            <a class="button primary disabled" href="#" aria-disabled="true">Amazon link coming soon</a>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <div class="book-cover placeholder-cover">Cover Coming Soon</div>
+          <div class="book-info">
+            <p class="book-type">Middle Grade / Adventure</p>
+            <h3>The Cube Chronicles</h3>
+            <p>A placeholder for the Cube Chronicles series. Add the book order, reading age, series description, and Amazon links later.</p>
+            <a class="button primary disabled" href="#" aria-disabled="true">Amazon link coming soon</a>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <div class="book-cover placeholder-cover">Cover Coming Soon</div>
+          <div class="book-info">
+            <p class="book-type">Bible Study / Nonfiction</p>
+            <h3>Through the Fire</h3>
+            <p>A placeholder for Bible study or devotional work. Add the edition details, audience, and purchase link when available.</p>
+            <a class="button primary disabled" href="#" aria-disabled="true">Amazon link coming soon</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" id="book-chat">
+      <div>
+        <p class="eyebrow">Reader Helper</p>
+        <h2>A simple book chatbot starter.</h2>
+        <p>This is not connected to a live AI model yet. It is a simple scripted helper that can be upgraded later to answer from book descriptions, sample chapters, reviews, and Amazon metadata.</p>
+      </div>
+
+      <div class="chat-panel">
+        <div class="chat-window" id="chatWindow" aria-live="polite">
+          <div class="chat-message bot">Welcome to the book hangar. Ask me about adventure books, kids books, Bible studies, series order, or Amazon links.</div>
+        </div>
+        <form class="chat-form" id="bookChatForm">
+          <label class="sr-only" for="bookQuestion">Ask about the books</label>
+          <input id="bookQuestion" type="text" placeholder="Ask: Which book is best for kids?" autocomplete="off" />
+          <button class="button primary" type="submit">Ask</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section feature-band">
+      <div class="section-heading">
+        <p class="eyebrow">Future Upgrade</p>
+        <h2>Turn this into a real AI sales assistant.</h2>
+        <p>The next version can connect to a database of Brandon's books and answer questions using real descriptions, categories, sample text, and Amazon links.</p>
+      </div>
+      <div class="prompt-card wide-card">
+        <h3>Prompt for a future AI book assistant</h3>
+        <p>Create a book recommendation chatbot for this page. It should ask what the reader likes, recommend the best Brandon book, explain why, and provide the correct Amazon link. It should only answer from the approved book database.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Daddy's Website · Book hangar ready for launch.</p>
+  </footer>
+
+  <script src="book-chat.js"></script>
+</body>
+</html>
